@@ -109,24 +109,6 @@ Node labels
 
 Side panel content
 
-Project Structure
-src/
-├── components/
-│   ├── MindMapCanvas.jsx   # D3 tree rendering & interactions
-│   ├── SidePanel.jsx       # Selected node details
-│   └── Toolbar.jsx         # Expand / Collapse / Fit controls
-│
-├── data/
-│   └── mindmap.json        # Hierarchical data source
-│
-├── utils/
-│   ├── buildHierarchy.js   # Converts JSON → d3.hierarchy
-│   └── layoutTree.js       # Tree layout configuration
-│
-├── App.jsx                 # App-level state & composition
-├── index.js
-└── index.css
-
 ## Interaction Flow
 
 ### Initial View
