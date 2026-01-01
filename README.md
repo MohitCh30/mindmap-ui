@@ -1,70 +1,202 @@
-# Getting Started with Create React App
+# Interactive Mindmap UI (React + D3)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project implements an interactive, data-driven mindmap UI using React and D3.js.
+The application visualizes hierarchical data as a mindmap and supports rich interactions such as node expansion/collapse, hover highlighting, zooming, and contextual data display via a side panel.
 
-In the project directory, you can run:
+The primary goal of this project is to demonstrate:
 
-### `npm start`
+Data-driven UI rendering
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Complex interactive visualization
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Clean separation of data, logic, and UI
 
-### `npm test`
+Practical use of D3 within a React application
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+### Framework & Libraries
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+React – Component-based UI and state management
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+D3.js – Tree layout, SVG rendering, zoom/pan, curved edges
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+JavaScript (ES6+)
 
-### `npm run eject`
+CSS – Layout and styling
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Why D3 + React?
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+D3 handles layout, geometry, and interactions efficiently
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+React manages application state, side panels, and component structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+This hybrid approach avoids hardcoding visuals while keeping the UI scalable
 
-## Learn More
+## Features Implemented
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### 1. Mindmap Visualization
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Hierarchical tree rendered as a mindmap
 
-### Code Splitting
+Nodes connected with curved SVG edges
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Clean and readable layout using a tree-based structure
 
-### Analyzing the Bundle Size
+### 2. Interactive Features
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Click to expand/collapse nodes
 
-### Making a Progressive Web App
+Root expands to first level
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Subsequent clicks expand only the selected subtree
 
-### Advanced Configuration
+Hover interactions
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Highlights hovered node
 
-### Deployment
+Highlights directly connected edges and nodes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Fit to View
 
-### `npm run build` fails to minify
+Automatically fits the currently visible tree into the viewport
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Collapse All
+
+Collapses the tree back to the root node
+
+Smooth zoom & pan
+
+Mouse wheel zoom
+
+Drag to pan the canvas
+
+### 3. Data Display
+
+Side Panel
+
+Displays detailed information of the selected node
+
+Hover context
+
+Quick visual feedback via highlighting
+
+Node content (title, summary, metadata) is fully data-driven
+
+## Data-Driven Architecture (Key Requirement)
+
+The mindmap is generated entirely from a structured JSON file.
+
+### How it works:
+
+#### The JSON file defines:
+
+Node hierarchy
+
+Titles
+
+Summaries / metadata
+
+The UI does not hardcode nodes
+
+#### Updating the JSON automatically updates:
+
+The visual structure
+
+Node labels
+
+Side panel content
+
+Project Structure
+src/
+├── components/
+│   ├── MindMapCanvas.jsx   # D3 tree rendering & interactions
+│   ├── SidePanel.jsx       # Selected node details
+│   └── Toolbar.jsx         # Expand / Collapse / Fit controls
+│
+├── data/
+│   └── mindmap.json        # Hierarchical data source
+│
+├── utils/
+│   ├── buildHierarchy.js   # Converts JSON → d3.hierarchy
+│   └── layoutTree.js       # Tree layout configuration
+│
+├── App.jsx                 # App-level state & composition
+├── index.js
+└── index.css
+
+## Interaction Flow
+
+### Initial View
+
+Only the root node is visible
+
+### Click Root
+
+First-level nodes appear
+
+### Click Any Node
+
+Expands only that node’s subtree
+
+Focus smoothly shifts to the selected node
+
+### Collapse All
+
+Returns the view to the root node
+
+### Fit View
+
+Fits the currently visible tree into the viewport
+
+## Known Limitations / Intentional Omissions
+
+Inline editing of nodes is not implemented
+
+This was intentionally skipped to avoid over-engineering
+
+Architecture supports future extension
+
+Export / download functionality not implemented (bonus feature)
+
+These decisions were made to prioritize correctness, clarity, and stability.
+
+## How to Run Locally
+
+npm install
+npm start
+
+
+## The app will run at:
+
+http://localhost:3000
+
+## Screenshots & Demo
+
+<img width="1920" height="764" alt="Screenshot (877)" src="https://github.com/user-attachments/assets/b7a89283-a180-4baa-923b-53a141adc6f5" />
+
+### Level 1 View 
+
+<img width="1920" height="856" alt="Screenshot (878)" src="https://github.com/user-attachments/assets/0a95a11c-6a91-41a0-9c91-0f5767f7d132" />
+
+### Fit View
+
+<img width="1920" height="837" alt="Screenshot (879)" src="https://github.com/user-attachments/assets/ca5224a5-978a-45bd-bb11-d64ca10ee6c7" />
+
+### Root View
+
+## Conclusion
+
+This project demonstrates:
+
+Thoughtful handling of hierarchical data
+
+Real-world use of D3 within React
+
+Clean, maintainable frontend architecture
+
+Focus on UX clarity over unnecessary complexity
+
+It fulfills the core functional and technical requirements of the assignment while remaining extensible for future improvements.
