@@ -1,4 +1,8 @@
-# Interactive Mindmap UI (React + D3)
+# Interactive Mindmap UI (React + D3) 
+
+## Live Demo: - 
+
+### https://mind0508.web.app/
 
 ## Overview
 
@@ -156,7 +160,7 @@ npm start
 
 http://localhost:3000
 
-## Screenshots & Demo
+## Screenshots 
 
 <img width="1920" height="764" alt="Screenshot (877)" src="https://github.com/user-attachments/assets/b7a89283-a180-4baa-923b-53a141adc6f5" />
 
