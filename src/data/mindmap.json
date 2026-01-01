@@ -1,0 +1,144 @@
+{
+  "id": "ds-root",
+  "title": "Data Structures in C++",
+  "summary": "Core data structures and libraries used for efficient problem solving in C++.",
+  "children": [
+    {
+      "id": "stl",
+      "title": "STL (Standard Template Library)",
+      "summary": "Generic data structures and algorithms provided by C++ standard library.",
+      "children": [
+        {
+          "id": "vector",
+          "title": "Vector",
+          "summary": "Dynamic array with fast random access and amortized O(1) insertion at end."
+        },
+        {
+          "id": "list",
+          "title": "List",
+          "summary": "Doubly linked list supporting fast insertion and deletion."
+        },
+        {
+          "id": "deque",
+          "title": "Deque",
+          "summary": "Double-ended queue allowing insertion and deletion from both ends."
+        },
+        {
+          "id": "set",
+          "title": "Set / Multiset",
+          "summary": "Ordered associative containers implemented using balanced BST."
+        },
+        {
+          "id": "map",
+          "title": "Map / Multimap",
+          "summary": "Key-value associative containers with logarithmic operations."
+        },
+        {
+          "id": "unordered",
+          "title": "Unordered Map / Set",
+          "summary": "Hash table based containers offering average O(1) operations."
+        }
+      ]
+    },
+    {
+      "id": "linear",
+      "title": "Linear Data Structures",
+      "summary": "Structures that store data sequentially.",
+      "children": [
+        {
+          "id": "array",
+          "title": "Array",
+          "summary": "Fixed-size contiguous memory structure with constant-time access."
+        },
+        {
+          "id": "string",
+          "title": "String",
+          "summary": "Sequence of characters with rich STL support."
+        },
+        {
+          "id": "stack",
+          "title": "Stack",
+          "summary": "LIFO structure used in recursion, parsing, and backtracking."
+        },
+        {
+          "id": "queue",
+          "title": "Queue",
+          "summary": "FIFO structure used in scheduling and BFS."
+        }
+      ]
+    },
+    {
+      "id": "nonlinear",
+      "title": "Non-Linear Data Structures",
+      "summary": "Hierarchical or graph-based data representations.",
+      "children": [
+        {
+          "id": "tree",
+          "title": "Trees",
+          "summary": "Hierarchical structure with root and child nodes.",
+          "children": [
+            {
+              "id": "bst",
+              "title": "Binary Search Tree",
+              "summary": "Ordered binary tree with efficient search."
+            },
+            {
+              "id": "heap",
+              "title": "Heap",
+              "summary": "Complete binary tree used in priority queues."
+            },
+            {
+              "id": "trie",
+              "title": "Trie",
+              "summary": "Prefix tree used for fast string searching."
+            }
+          ]
+        },
+        {
+          "id": "graph",
+          "title": "Graphs",
+          "summary": "Set of vertices connected by edges.",
+          "children": [
+            {
+              "id": "dfs",
+              "title": "DFS",
+              "summary": "Depth First Search traversal technique."
+            },
+            {
+              "id": "bfs",
+              "title": "BFS",
+              "summary": "Breadth First Search traversal technique."
+            },
+            {
+              "id": "dijkstra",
+              "title": "Dijkstra",
+              "summary": "Shortest path algorithm for weighted graphs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "advanced",
+      "title": "Advanced Topics",
+      "summary": "Performance-focused and specialized data structures.",
+      "children": [
+        {
+          "id": "segment-tree",
+          "title": "Segment Tree",
+          "summary": "Efficient range query structure."
+        },
+        {
+          "id": "fenwick",
+          "title": "Fenwick Tree",
+          "summary": "Binary Indexed Tree for prefix sums."
+        },
+        {
+          "id": "dsu",
+          "title": "Disjoint Set Union",
+          "summary": "Union-Find structure for connectivity queries."
+        }
+      ]
+    }
+  ]
+}

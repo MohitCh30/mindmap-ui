@@ -1,13 +1,65 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.mindmap-canvas {
+  flex: 3;
+  height: 100%;
+  background: #0f172a;
+}
+
+.side-panel {
+  flex: 1;
+  background: #111827;
+  color: #e5e7eb;
+  border-left: 1px solid #1f2933;
+  padding: 16px;
+}
+
+
+.node {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.node:hover {
+  background: #f0f4ff;
+}
+
+.summary {
+  font-size: 12px;
+  color: #555;
+}
+
+
+
+input, textarea {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.toolbar-btn {
+  background: #1e293b;
+  color: #e5e7eb;
+  border: 1px solid #334155;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.toolbar-btn:hover {
+  background: #334155;
 }
