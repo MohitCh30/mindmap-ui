@@ -148,6 +148,7 @@ These decisions were made to prioritize correctness, clarity, and stability.
 ## How to Run Locally
 
 npm install
+
 npm start
 
 
